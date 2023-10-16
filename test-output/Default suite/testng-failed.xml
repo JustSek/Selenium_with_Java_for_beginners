@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <parameter name="password" value="param-val-not-found"/>
+  <parameter name="expectedMessage" value="param-val-not-found"/>
+  <parameter name="username" value="param-val-not-found"/>
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.herokuapp.theinternet.NegativeTest">
+        <methods>
+          <include name="negativeLoginTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.herokuapp.theinternet.NegativeTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
