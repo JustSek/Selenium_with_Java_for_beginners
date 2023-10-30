@@ -3,15 +3,14 @@
 
 <suite name="Debug" verbose="1">
 
-	<test name="positiveLoginTest">
+	<test name="Exception Test">
 
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.herokuapp.theinternet.LoginTests">
-				<methods>
-					<include name="positiveLoginTest"></include>
-				</methods>
-			</class>
+			<class name="com.herokuapp.theinternet.ExceptionsTestsUpdated"> </class>
+			<methods>
+				<include name="timeoutExceptionTest"></include>
+			</methods>
 		</classes>
 	</test>
 

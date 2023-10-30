@@ -62,7 +62,7 @@ public class ExceptionTest {
 
 		WebElement finishElement = driver.findElement(By.id("finish"));
 
-		// Explicit wait (waiting for elemnt)
+		// Explicit wait (waiting for element)
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(finishElement));
 		String finishText = finishElement.getText();
@@ -119,10 +119,6 @@ public class ExceptionTest {
 		Assert.assertTrue(
 				wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("finish"), "Hello World!")),
 				"Couldn't verify expected text 'Hello World!'");
-
-//		WebElement finishElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("finish")));
-//		String finishText = finishElement.getText();
-//		Assert.assertTrue(finishText.contains("Hello World!"), "Finish Text: " + finishText);
 	}
 
 	@Test
@@ -141,9 +137,9 @@ public class ExceptionTest {
 //				"Checkbox is still visible but should not be");
 
 		// Assert.assertFalse(checkbox.isDisplayed());
-		// Test fails because checkbox elemtn is no longer on page. Fix to that is to
+		// Test fails because checkbox element is no longer on page. Fix to that is to
 		// copy wait into assertion.
-		// invisibilityOf returns Bolean == True when element is no longer visible
+		// invisibilityOf returns Boolean == True when element is no longer visible
 
 		// Another way how to handle stale element
 		Assert.assertTrue(wait.until(ExpectedConditions.stalenessOf(checkbox)),
@@ -154,7 +150,7 @@ public class ExceptionTest {
 
 		//Test will fail, because for selenium new checkbox is not the same element as it was.
 		//New element needs to be created or assigned, so instead of ExpectedConditions.visibilityOf(checkbox)
-		//we create mew reference and use: 
+		//we create new reference and use:
 		
 		WebElement checkbox2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("checkbox")));
 		Assert.assertTrue(checkbox2.isDisplayed(), "Checkbox is not visible but it should be");
@@ -194,11 +190,5 @@ public class ExceptionTest {
 		// Close Browser
 		driver.quit();
 	}
-
-	/*
-	 * private void sleep(long m) { try { Thread.sleep(m); } catch
-	 * (InterruptedException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); } }
-	 */
 
 }
